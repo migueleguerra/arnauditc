@@ -1,0 +1,7 @@
+.forma{
+	color: black !important; 
+}
+
+::-webkit-input-placeholder {
+  color: #999999 !important;
+}
