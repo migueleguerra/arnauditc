@@ -5,37 +5,37 @@ myApp.config(function($routeProvider, $locationProvider){
 	.when("/", {
 		templateUrl: "partials/home.html"
 	})
-	.when("/cotizacion", {
+	.when("/quote", {
 		templateUrl: "partials/cotizacion.html"
 	})
-	.when("/quienes_somos", {
+	.when("/who_are_we", {
 		templateUrl: "partials/quienes_somos.html"
 	})
-	.when("/servicios", {
+	.when("/services", {
 		templateUrl: "partials/servicios.html"
 	})
-	.when("/contacto", {
+	.when("/contact", {
 		templateUrl: "partials/contacto.html"
 	})
-	.when("/transportacion", {
+	.when("/transportation", {
 		templateUrl: "partials/transportacion.html"
 	})
-	.when("/logistica", {
+	.when("/logistic", {
 		templateUrl: "partials/logistica.html"
 	})
-	.when("/productos", {
+	.when("/products", {
 		templateUrl: "partials/productos.html"
 	})
-	.when("/distribucion", {
+	.when("/distribution", {
 		templateUrl: "partials/servicios_de_distribucion.html"
 	})
-	.when("/limones", {
+	.when("/limes", {
 		templateUrl: "partials/limones.html"
 	})
-	.when("/plasticos", {
+	.when("/pet", {
 		templateUrl: "partials/plasticos.html"
 	})
-	.when("/politica", {
+	.when("/privacy_policy", {
 		templateUrl: "partials/politica_privacidad.html"
 	})
 	.otherwise({
