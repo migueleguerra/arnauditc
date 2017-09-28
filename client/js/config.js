@@ -29,10 +29,10 @@ myApp.config(function($routeProvider, $locationProvider){
 	.when("/distribution", {
 		templateUrl: "partials/servicios_de_distribucion.html"
 	})
-	.when("/limes", {
+	.when("/farm_products", {
 		templateUrl: "partials/limones.html"
 	})
-	.when("/pet", {
+	.when("/food_packaging", {
 		templateUrl: "partials/plasticos.html"
 	})
 	.when("/privacy_policy", {
