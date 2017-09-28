@@ -43,9 +43,10 @@ module.exports = (function(){
 				cliente.save(function(error){
 					if(error)
 						if(error.code == 11000)
-							return res.json({exito: false, msg: "Este correo ya existe."});
+							return res.json({exito: false, msg: "This email already exists in our database. " +  
+								             					"Wait for one of our representatives to contact you."});
 						else
-							return res.json({exito: false, msg: "Error de la base de datos."});
+							return res.json({exito: false, msg: "Error! please try again later."});
 					else
 					{
 						agregarEmailMailchimp(req.body.email, req.body.nombreCliente, req.body.apellidoCliente);
@@ -117,7 +118,7 @@ module.exports = (function(){
 							console.log(info);
 						});
 
-						res.json({exito: true, msg: "El cliente se creo correctamente."});
+						res.json({exito: true, msg: "Tank you! One of our representatives will contact you as soon as posible."});
 					}
 				});
 			}

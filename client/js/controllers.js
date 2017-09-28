@@ -8,7 +8,7 @@ myApp.controller("mainController", function($scope, $location, $rootScope, $time
 		var data = true;
 		if(data)
 		{
-			$scope.msgExito = "Exito, Uno de nuestros representantes lo contactara lo antes posible.";
+			$scope.msgExito = "Exito! Uno de nuestros representantes lo contactara lo antes posible.";
 			$timeout(function(){
 				$scope.msgExito = false;
 			}, 3000);
@@ -52,6 +52,10 @@ myApp.controller("contactoController", function($scope, $location, $rootScope, $
 
 	$rootScope.homeRelo = function(){
 		$window.location.reload();
+	}
+
+	$scope.sendContacto = function(contacto){
+		console.log(contacto);
 	}
 });
 

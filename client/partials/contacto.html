@@ -15,35 +15,49 @@
                   			<p>Email us with any questions or inquiries or use our contact data. We would be happy to answer your questions.</p>
                 		</div>
                 		<div class="offset-top-30">
-                  			<form data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php" class="rd-mailform text-left">
+                  			<form data-form-output="form-output-global" data-form-type="contact" class="rd-mailform text-left">
                       			<div class="range range-narrow">
                     				<div class="cell-lg-6">
                       				    <div class="form-group">
             								<label class="form-label form-label-outside"> Name *</label>
-            								<input type="text" placeholder="Name" class="form-control">
+            								<input type="text" placeholder="Name" class="form-control" ng-model="contacto.nombreCliente">
           							    </div>
                     				</div>
                     				<div class="cell-lg-6 offset-top-10 offset-lg-top-0">
                       				    <div class="form-group">
             								<label class="form-label form-label-outside"> Last Name *</label>
-            								<input type="text" placeholder="Last Name" class="form-control">
+            								<input type="text" placeholder="Last Name" class="form-control" ng-model="contacto.apellidoCliente">
           							    </div>
                     				</div>
                     				<div class="cell-lg-12 offset-top-10">
                       				    <div class="form-group">
             								<label class="form-label form-label-outside"> Email *</label>
-            								<input type="text" placeholder="Email" class="form-control">
+            								<input type="email" placeholder="Email" class="form-control" ng-model="contacto.email">
           							    </div>
                     				</div>
                     				<div class="cell-lg-12 offset-top-10">
                       				    <div class="form-group">
             								<label class="form-label form-label-outside"> Message</label>
-            								<textarea id="contact-me-message" style="height: 160px" class="form-control" placeholder="Message"></textarea>
-	                    				    </div>
+            								<textarea id="contact-me-message" style="height: 160px" class="form-control" placeholder="Message" ng-model="contacto.comentarios"></textarea>
+	                    				</div>
                     				</div>
                       			</div>
+                                <div class="offset-top-10">
+                                    <p>* Required fields</p>
+                                </div>
+                                <!-- Mensajes de verificación -->
+                                <div class="row show-hide-message" ng-show="msgExito">
+                                    <div class="alert alert-success">
+                                        {{ msgExito }}
+                                    </div>
+                                </div>
+                                <div class="row show-hide-message" ng-show="msgError">
+                                    <div class="alert alert-danger">
+                                        {{ msgError }}
+                                    </div>
+                                </div>
                       			<div class="text-center text-lg-left offset-top-10">
-                        			<button type="submit" class="btn btn-sm btn-primary">Send</button>
+                        			<button type="submit" class="btn btn-sm btn-primary" ng-click="sendContacto(contacto)">Send</button>
                       			</div>
                   			</form>
                 		</div>
