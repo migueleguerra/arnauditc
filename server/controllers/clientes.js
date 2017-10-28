@@ -22,8 +22,15 @@ module.exports = (function(){
 
 		crearCliente: function(req, res){
 
-			if(req.body.nombreCliente == null || req.body.email == null || req.body.apellidoCliente == null)
-				res.json({exito: false, msg: "Error! llenar todos los campos obligatorios"});
+			if(req.body.pagina == "quickQuote" && (req.body.nombreCliente == null || req.body.email == null ||
+												   req.body.producto == null || req.body.tipoServicio == null || 
+												   req.body.nombreCliente == "" || req.body.email == "" ||
+											       req.body.producto == "" || req.body.tipoServicio == ""))
+				res.json({exito: false, msg: "Please fill all the required fields."});
+			else if((req.body.pagina == "contacto" || req.body.pagina == "quote") && (req.body.nombreCliente == null || req.body.email == null ||
+												     req.body.apellidoCliente == null || req.body.nombreCliente == "" ||
+												     req.body.email == "" || req.body.apellidoCliente == ""))
+				res.json({exito: false, msg: "Please fill all the required fields."});
 			else
 			{
 				var cliente = new Cliente({

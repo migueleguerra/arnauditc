@@ -1,0 +1,105 @@
+<div ng-controller="cotizacionController">
+	<!-- RD Parallax-->
+    <div>
+        <img height="300px" src="img/home/bg-01-1920x400.jpg">       
+    </div>
+
+	  <main class="page-content">
+        <section class="section-70 section-md-90">
+          	<div class="shell text-sm-left">
+              	<h2>Quotation</h2>
+              	<hr class="divider divider-lg bg-primary hr-sm-left-0">
+              	<div class="offset-top-50">
+                		<p>Please complete and submit this form. One of our representatives will respond as soon as possible. Thank you!</p>
+              	</div>
+              	<div class="offset-top-20">
+                		<form method="post" action="bat/rd-mailform.php" data-form-output="form-output-global" class="rd-mailform text-left">
+                    		<div class="range range-xs-bottom">
+                      			<div class="cell-sm-6 cell-lg-4">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Name *</label>
+                            			<input type="text" placeholder="Name" class="form-control" ng-model="cotizacion.nombreCliente">
+                          			</div>
+                      			</div>
+                      			<div class="cell-sm-6 cell-lg-4 offset-top-30 offset-sm-top-0">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Last Name *</label>
+                            			<input type="text" placeholder="Last Name" class="form-control" ng-model="cotizacion.apellidoCliente">
+                          			</div>
+                      			</div>
+                      			<div class="cell-sm-6 cell-lg-4 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Company</label>
+                            			<input type="text" placeholder="Name of Company" class="form-control" ng-model="cotizacion.nombreEmpresa">
+                          			</div>
+                      			</div>
+                      			<div class="cell-sm-6 cell-lg-4 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Location</label>
+                            			<input type="text" placeholder="city, Country" class="form-control" ng-model="cotizacion.ubicacionCliente">
+                          			</div>
+                      			</div>
+                      			<div class="cell-sm-6 cell-lg-4 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Phone Number</label>
+                            			<input type="number" placeholder="Phone Number" class="form-control" ng-model="cotizacion.telefono">
+                          			</div>
+                      			</div>
+                      			<div class="cell-sm-6 cell-lg-4 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Email *</label>
+                            			<input type="email" placeholder="Email" class="form-control" ng-model="cotizacion.email">
+                          			</div>
+                      			</div>
+                      			<div class="cell-sm-6 cell-lg-3 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Type of Service</label>
+                            			<input type="text" placeholder="Type of service: Air, Sea or Land" class="form-control" ng-model="cotizacion.tipoServicio">
+      			                    </div>
+    			                </div>
+    			                <div class="cell-sm-6 cell-lg-3 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Origin of the Service</label>
+                            			<input type="text" placeholder="City, Country" class="form-control" ng-model="cotizacion.origenServicio">
+      			                    </div>
+    			                </div>
+    			                <div class="cell-sm-6 cell-lg-3 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Destination of the Service</label>
+                            			<input type="text" placeholder="City, Country" class="form-control" ng-model="cotizacion.destinoServicio">
+      			                    </div>
+    			                </div>
+    			                <div class="cell-sm-6 cell-lg-3 offset-top-30">
+                          			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Product</label>
+                            			<input type="text" placeholder="Product" class="form-control" ng-model="cotizacion.producto">
+      			                    </div>
+    			                </div>
+    			                <div class="cell-sm-6 cell-lg-12 offset-top-30">
+                        			<div class="form-group">
+                            			<label class="form-label form-label-outside"> Comments</label>
+                            			<textarea id="contact-me-message" style="height: 160px" class="form-control" placeholder="Comments" ng-model="cotizacion.comentarios"></textarea>
+      			                    </div>
+    			                </div>
+                        			<div class="cell-sm-3 cell-lg-2 offset-top-30"><a href="#" style="padding-left:30px; padding-right: 30px" class="btn btn-primary btn-sm btn-block" ng-click="cot()">Send</a></div>
+                        			<div class="cell-sm-1 cell-lg-2 offset-top-30">
+        			              		  <p>* Required fields</p>
+      			            	    </div>
+                              <!-- Mensajes de verificación -->
+                              <div class="row show-hide-message" ng-show="msgExito">
+                                  <div class="alert alert-success">
+                                      {{ msgExito }}
+                                  </div>
+                              </div>
+                              <div class="row show-hide-message" ng-show="msgError">
+                                  <div class="alert alert-danger">
+                                      {{ msgError }}
+                                  </div>
+                              </div>
+                    		</div>
+                		</form>
+              	</div>
+          	</div>
+        </section>
+    </main>
+</div>

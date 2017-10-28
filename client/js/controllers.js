@@ -1,33 +1,62 @@
-myApp.controller("mainController", function($scope, $location, $rootScope, $timeout){
+myApp.controller("mainController", function($scope, $location, $rootScope, $timeout, ClienteFactory){
 	$rootScope.isHome = true;
 	$scope.msgExito = false;
 	$scope.msgError = false;
+	$scope.cotizacionRapida = {};
 
-	$scope.cRapida = function(cotizacionRapida){
-		console.log($scope.cotizacionRapida);
-		var data = true;
-		if(data)
-		{
-			$scope.msgExito = "Exito! Uno de nuestros representantes lo contactara lo antes posible.";
-			$timeout(function(){
-				$scope.msgExito = false;
-			}, 3000);
-		}
-		else
-		{
-			$scope.msgError = "No Exito";
-			$timeout(function(){
-				$scope.msgError = false;
-			}, 3000);
-		}
+	$scope.cRapida = function(){
+		$scope.cotizacionRapida.pagina = "quickQuote";
+
+		ClienteFactory.quote($scope.cotizacionRapida, function(data){
+			if(data.exito)
+			{
+				$scope.cotizacionRapida = {};
+				$scope.msgExito = data.msg;
+				$timeout(function(){
+					$scope.msgExito = false;
+				}, 3000);
+			}
+			else
+			{
+				$scope.msgError = data.msg;
+				$timeout(function(){
+					$scope.msgError = false;
+				}, 3000);
+			}
+		});
 	}	
 });
 
-myApp.controller("cotisacionController", function($scope, $location, $rootScope, $window){
+myApp.controller("cotizacionController", function($scope, $location, $rootScope, $window, $timeout, ClienteFactory){
 	$rootScope.isHome = false;
+	$scope.cotizacion = {};
 
 	$rootScope.homeRelo = function(){
 		$window.location.reload();
+	}
+
+	$scope.cot = function(){
+		$scope.cotizacion.pagina = "quote";
+
+		ClienteFactory.quote($scope.cotizacion, function(data){
+			if(data.exito)
+			{
+				$scope.cotizacion = {};
+				$scope.msgExito = data.msg;
+				$timeout(function(){
+					$location.path("/");
+					$rootScope.homeRelo();
+					$scope.msgExito = false;
+				}, 3000);
+			}
+			else
+			{
+				$scope.msgError = data.msg;
+				$timeout(function(){
+					$scope.msgError = false;
+				}, 3000);
+			}
+		});
 	}
 });
 
@@ -47,15 +76,35 @@ myApp.controller("serviciosController", function($scope, $location, $rootScope, 
 	}
 });
 
-myApp.controller("contactoController", function($scope, $location, $rootScope, $window){
+myApp.controller("contactoController", function($scope, $location, $rootScope, $window, $timeout, ClienteFactory){
 	$rootScope.isHome = false;
+	$scope.contacto = {};
 
 	$rootScope.homeRelo = function(){
 		$window.location.reload();
 	}
 
-	$scope.sendContacto = function(contacto){
-		console.log(contacto);
+	$scope.sendContacto = function(){
+		$scope.contacto.pagina = "contacto";
+		ClienteFactory.quote($scope.contacto, function(data){
+			if(data.exito)
+			{
+				$scope.contacto = {};
+				$scope.msgExito = data.msg;
+				$timeout(function(){
+					$location.path("/");
+					$rootScope.homeRelo();
+					$scope.msgExito = false;
+				}, 3000);
+			}
+			else
+			{
+				$scope.msgError = data.msg;
+				$timeout(function(){
+					$scope.msgError = false;
+				}, 3000);
+			}
+		});
 	}
 });
 
