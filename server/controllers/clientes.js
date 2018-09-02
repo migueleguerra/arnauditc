@@ -219,7 +219,11 @@ function agregarEmailMailchimp(email, nombre, apellido) {
   };
 
   request(options, function(error, response, body) {
-    if (error) throw new Error(error);
-    console.log('Se agrego ' + nombre + ' ' + apellido + ' a MailChimp');
+    if (error) {
+      throw new Error(error);
+      console.log(error);
+    } else {
+      console.log('Se agrego ' + nombre + ' ' + apellido + ' a MailChimp');
+    }
   });
 }
