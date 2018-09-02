@@ -10,10 +10,10 @@
   "author": "Miguel Guerra",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "mongoose": "^4.11.3",
-    "nodemailer": "^4.0.1",
-    "request": "^2.81.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^4.13.17",
+    "nodemailer": "^4.6.8",
+    "request": "^2.88.0"
   }
 }

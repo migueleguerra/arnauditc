@@ -1,11 +1,11 @@
-var mongoose = require("mongoose");
-var path = require("path");
-var fs = require("fs");
+var mongoose = require('mongoose');
+var path = require('path');
+var fs = require('fs');
+var keys = require('../keys/keys');
 
-mongoose.connect("mongodb://localhost/arnauditc");
-var modelsPath = path.join(__dirname, "./../models");
+mongoose.connect(keys.mongoURI);
+var modelsPath = path.join(__dirname, './../models');
 
-fs.readdirSync(modelsPath).forEach(function(file){
-	if(file.indexOf(".js") > 0)
-		require(modelsPath + "/" + file);
+fs.readdirSync(modelsPath).forEach(function(file) {
+  if (file.indexOf('.js') > 0) require(modelsPath + '/' + file);
 });
