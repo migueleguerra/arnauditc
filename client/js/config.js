@@ -32,6 +32,9 @@ myApp.config(function($routeProvider, $locationProvider) {
     .when("/privacy_policy", {
       templateUrl: "partials/politica_privacidad.html"
     })
+    .when("/terms_of_use", {
+      templateUrl: "partials/terms_of_use.html"
+    })
     .otherwise({
       redirectTo: "/"
     });
