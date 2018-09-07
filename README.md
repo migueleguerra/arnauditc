@@ -13,7 +13,7 @@
 * [Nodemailer@4.6.8](https://nodemailer.com/about/) - Email handler for Nodejs
 * [mLab](https://mlab.com/) - Database as a service for MongoDB
 * [Mailchimp](https://mailchimp.com/) - Marketing automation platform
-* [Heroku](https://www.heroku.com/) - Web application hosting cloud platform
+* [DigitalOcean](https://www.digitalocean.com/) - Web application hosting cloud platform
 
 ## Authors
 
